@@ -8,4 +8,4 @@ for i in range(1, 14):
 	else:
 		print((' '*x)+('*'*y))
 		x=x+1
-		y=y-2
+		y=y-2 
