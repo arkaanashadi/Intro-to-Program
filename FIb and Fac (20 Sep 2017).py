@@ -20,3 +20,4 @@ elif funct == "fib":
 	fibonacci()
 else:
 	print("invalid")
+	
