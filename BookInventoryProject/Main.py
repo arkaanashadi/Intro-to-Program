@@ -210,7 +210,8 @@ def main(runs, phase, id_number):
         id_number = "1"
         supervising = []
         managers.addmanager(name, email, wage, id_number, supervising)
-
+        phase = 1
+        
     elif (runs == 1) and (phase == 1):
         id_number = input("Please input your ID number ")
         phase = 2
@@ -229,4 +230,4 @@ def main(runs, phase, id_number):
             print("invalid ID")
             main(1, 1, 0)
 
-main(1, 1, 0)
+main(0, 0, 0)
