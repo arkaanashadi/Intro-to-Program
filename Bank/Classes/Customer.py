@@ -1,4 +1,4 @@
-from Bank.Classes.Account import *
+from Classes.Account import *
 
 
 class Customer(Account):

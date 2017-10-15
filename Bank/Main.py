@@ -1,4 +1,4 @@
-from Bank.Classes.Bank import *
+from Classes.Bank import *
 
 
 def action(bank, index):
@@ -77,8 +77,13 @@ def main(runs, bank):
 
         while True:
 
+            # Catch login attempt with no accounts yet
+            if user == "login" and bank.getnumofcustomer() <= 0:
+                print("There are no existing accounts yet")
+                main(1, bank)
+
             # Login
-            if user == "login":
+            elif user == "login" and bank.getnumofcustomer() > 0:
 
                 while True:
 
@@ -121,8 +126,8 @@ def main(runs, bank):
 
             # New account
             elif user == "new account":
-
-                while True:
+                x = 1
+                while x == 1:
                     first_name = input("What is your first name? ").title()
                     last_name = input("What is yout last name? ").title()
 
@@ -130,13 +135,18 @@ def main(runs, bank):
                         print("Account already exist")
                         main(1, bank)
 
-                    user = input("is the information above correct? \n[Yes]\n[No]\n").lower()
+                    while True:
+                        user = input("is the information above correct? \n[Yes]\n[No]\n").lower()
 
-                    if user == "no":
-                        continue
+                        if user == "no":
+                            break
 
-                    elif user == "yes":
-                        break
+                        elif user == "yes":
+                            x = 0
+                            break
+
+                        else:
+                            print("Invalid input")
 
                 while True:
                     try:
